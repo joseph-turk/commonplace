@@ -1,0 +1,55 @@
+<% include partials/meta %>
+<% include partials/header %>
+
+  <div class="main-content">
+    <div class="container">
+      <% if (message) { %>
+        <div class="alert alert-warning alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <%= message %>
+        </div>
+      <% } %>
+
+      <% if (book) { %>
+      <div class="jumbotron">
+        <h1 class="book-title"><%= book.settings.title %></h1>
+      </div>
+      <% } %>
+
+      <!-- REMOVED FUNCTIONALITY FOR SHOWING QUOTE ON COVER PAGE
+      <% if (quote) { %>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3><%= quote.title %></h3>
+        </div>
+        <div class="panel-body">
+          <blockquote><%= quote.body %></blockquote>
+
+          <cite>—<%= quote.author %></cite>
+        </div>
+      </div>
+      <% } %>
+      END REMOVED FUNCTIONALITY -->
+
+      <% if (user) { %>
+      <div class="row">
+        <div class="col-xs-6">
+          <a class="btn btn-primary view-quotes" href="/quotes">View Quotes</a>
+        </div>
+
+        <div class="col-xs-6">
+          <a class="btn btn-success add-quote" href="/quotes/new">Add Quote</a>
+        </div>
+      </div>
+      <% } else { %>
+      <div class="row">
+        <div class="col-xs-12">
+          <a class="btn btn-primary" href="/auth/google">Log In or Sign Up</a>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+
+<% include partials/footer %>
+<% include partials/scripts %>

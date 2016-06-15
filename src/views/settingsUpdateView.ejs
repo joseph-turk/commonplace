@@ -1,0 +1,33 @@
+<% include partials/meta %>
+<% include partials/header %>
+
+  <div class="main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>Settings</h1>
+        </div>
+      </div>
+
+      <form name="settingsUpdateForm" action="/settings/update" method="post">
+        <div class="form-group">
+          <label for="bookTitle">Book Title</label>
+          <input type="text" class="form-control" id="bookTitle" name="bookTitle" placeholder="<%= book.settings.title %>">
+        </div>
+
+        <div class="row">
+          <div class="col-xs-6">
+            <button type="submit" class="btn btn-success">Save</button>
+          </div>
+
+          <div class="col-xs-6">
+            <a href="/settings" class="btn btn-danger cancel-add">Cancel</a>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+<% include partials/footer %>
+<% include partials/scripts %>

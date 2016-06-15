@@ -1,0 +1,35 @@
+<% include partials/meta %>
+<% include partials/header %>
+
+  <div class="main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>Settings</h1>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2>Book Title</h2>
+        </div>
+
+        <div class="panel-body">
+          <%= book.settings.title %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-6">
+          <a href="/settings/edit" class="btn btn-primary">Update</a>
+        </div>
+
+        <div class="col-xs-6">
+          <a href="/" class="btn btn-warning">Cancel</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% include partials/footer %>
+<% include partials/scripts %>

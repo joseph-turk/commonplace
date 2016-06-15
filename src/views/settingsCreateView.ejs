@@ -1,0 +1,29 @@
+<% include partials/meta %>
+<% include partials/header %>
+
+  <div class="main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>Create Your Book</h1>
+        </div>
+      </div>
+
+      <form name="settingsCreateForm" method="post">
+        <div class="form-group">
+          <label for="bookTitle">Book Title</label>
+          <input type="text" class="form-control" id="bookTitle" name="bookTitle" placeholder="Common Place">
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <button type="submit" class="btn btn-success">Create Book</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+<% include partials/footer %>
+<% include partials/scripts %>
