@@ -105,7 +105,8 @@ var quoteController = function() {
         'quotes.$.body': req.body.quoteBody,
         'quotes.$.author': req.body.quoteAuthor,
         'quotes.$.source': req.body.quoteSource,
-        'quotes.$.sourceauthor': req.body.quoteSourceAuthor
+        'quotes.$.sourceauthor': req.body.quoteSourceAuthor,
+        'quotes.$.updatedAt': new Date()
       },
       function(err, results) {
         res.redirect('/quotes/' + id);

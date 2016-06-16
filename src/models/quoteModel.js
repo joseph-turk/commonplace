@@ -16,10 +16,10 @@ var QuoteSchema = new Schema({
   },
   sourceauthor: {
     type: String
-  },
-  iscover: {
-    type: String
   }
+},
+{
+  timestamps: true
 });
 
 module.exports = QuoteSchema;
