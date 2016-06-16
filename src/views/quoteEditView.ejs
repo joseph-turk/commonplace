@@ -11,6 +11,11 @@
 
       <form name="addQuoteForm" action="/quotes/update" method="post">
         <div class="form-group">
+          <label for="quoteID">Quote ID</label>
+          <input type="text" class="form-control" id="quoteID" name="quoteID" value="<%= quote._id %>">
+        </div>
+
+        <div class="form-group">
           <label for="quoteTitle">Title</label>
           <input type="text" class="form-control" id="quoteTitle" name="quoteTitle" value="<%= quote.title %>">
         </div>
@@ -32,7 +37,7 @@
 
         <div class="form-group">
           <label for="quoteSourceAuthor">Source Author</label>
-          <input type="text" class="form-control" id="quoteSourceAuthor" name="quoteSourceAuthor" value="<%= quote.sourceAuthor %>">
+          <input type="text" class="form-control" id="quoteSourceAuthor" name="quoteSourceAuthor" value="<%= quote.sourceauthor %>">
         </div>
 
         <div class="checkbox">

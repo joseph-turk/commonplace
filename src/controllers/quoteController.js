@@ -49,7 +49,8 @@ var quoteController = function() {
     Book.findOne({'creator': req.user.email}, function(err, book) {
       res.render('quoteEditView', {
         quote: book.quotes.id(id),
-        user: req.user
+        user: req.user,
+        quoteid: id
       });
     });
   };
@@ -97,57 +98,21 @@ var quoteController = function() {
 
   // Update Quote
   var postQuoteUpdate = function(req, res) {
-    var id = new ObjectID(req.params.id);
-    console.log(id);
-    //console.log(req.body);
-
+    var id = new ObjectID(req.body.quoteID);
 
     Book.findOneAndUpdate(
       {'creator': req.user.email, 'quotes._id': id},
       {
-        'quotes.$.title': req.body.quoteTitle
+        'quotes.$.title': req.body.quoteTitle,
+        'quotes.$.body': req.body.quoteBody,
+        'quotes.$.author': req.body.quoteAuthor,
+        'quotes.$.source': req.body.quoteSource,
+        'quotes.$.sourceauthor': req.body.quoteSourceAuthor
+      },
+      function(err, results) {
+        res.redirect('/quotes');
       }
     );
-
-
-
-
-    // res.redirect('/quotes');
-
-    // mongodb.connect(url, function(err, db) {
-    //   var collection = db.collection('quotes');
-    //
-    //   var quote = collection.find({_id: id});
-    //
-    //   console.log(quote);
-    //   res.redirect('/quotes');
-    //   var quote = {
-    //     _id: id,
-    //     title: req.body.quoteTitle,
-    //     body: req.body.quoteBody,
-    //     author: req.body.quoteAuthor,
-    //     source: req.body.quoteSource,
-    //     sourceauthor: req.body.quoteSourceAuthor,
-    //     isCover: req.body.quoteMakeCover
-    //   };
-    //
-    //   // Clear Cover Quote Setting if Present in New Quote
-    //   if (req.body.quoteMakeCover) {
-    //     collection.update({}, { $set: { isCover: null } }, { multi: true });
-    //   }
-    //
-    //   collection.update({ _id: id }, { $set: {
-    //     title: req.body.quoteTitle,
-    //     body: req.body.quoteBody,
-    //     author: req.body.quoteAuthor,
-    //     source: req.body.quoteSource,
-    //     sourceauthor: req.body.quoteSourceAuthor,
-    //     isCover: req.body.quoteMakeCover
-    //   } }, { upsert: true, multi: false });
-    //
-    //   res.redirect('/quotes');
-    //   db.close();
-    // });
   };
 
   return {
