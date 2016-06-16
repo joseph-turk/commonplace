@@ -20,10 +20,14 @@ var router = function() {
   quoteRouter.route('/update')
     .post(quoteController.postQuoteUpdate);
 
+  // Post Data to Delete Quote
+  quoteRouter.route('/delete/:id')
+    .get(quoteController.getQuoteDelete);
+
   // Single Quote View Route
   quoteRouter.route('/:id')
     .get(quoteController.getById);
-  
+
   return quoteRouter;
 };
 

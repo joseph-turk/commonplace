@@ -1,7 +1,5 @@
 var mongodb = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID;
-var config = require('../config/mongo.json');
-var url = config.dbURL;
 var Book = require('../models/bookModel');
 var Quote = require('../models/quoteModel');
 
@@ -115,13 +113,30 @@ var quoteController = function() {
     );
   };
 
+  // Delete Quote
+  var getQuoteDelete = function(req, res) {
+    var id = new ObjectID(req.params.id);
+
+    Book.findOne({'creator': req.user.email}, function(err, book) {
+      if (book) {
+        book.quotes.pull(id);
+
+        book.save();
+        res.redirect('/quotes');
+      } else {
+        res.send('Not logged in');
+      }
+    });
+  }
+
   return {
     getIndex: getIndex,
     getById: getById,
     editById: editById,
     getQuoteAdd: getQuoteAdd,
     postQuoteAdd: postQuoteAdd,
-    postQuoteUpdate: postQuoteUpdate
+    postQuoteUpdate: postQuoteUpdate,
+    getQuoteDelete: getQuoteDelete
   };
 };
 

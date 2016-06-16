@@ -23,6 +23,7 @@
           <cite class="quote-author">—<%= quotes[i].author %></cite>
 
           <a href="/quotes/<%= quotes[i]._id %>" class="btn btn-primary">Details</a>
+          <a href="/quotes/delete/<%= quotes[i]._id %>" class="btn btn-danger">Delete Quote</a>
         </div>
       </div>
       <% } %>
