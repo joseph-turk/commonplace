@@ -108,7 +108,7 @@ var quoteController = function() {
         'quotes.$.sourceauthor': req.body.quoteSourceAuthor
       },
       function(err, results) {
-        res.redirect('/quotes');
+        res.redirect('/quotes/' + id);
       }
     );
   };
