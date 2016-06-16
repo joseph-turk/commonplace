@@ -40,24 +40,14 @@
           <input type="text" class="form-control" id="quoteSourceAuthor" name="quoteSourceAuthor" value="<%= quote.sourceauthor %>">
         </div>
 
-        <div class="checkbox">
-          <label>
-            <% if (quote.isCover) { %>
-            <input type="checkbox" id="quoteMakeCover" name="quoteMakeCover" checked> Make Cover Quote?
-            <% } else { %>
-            <input type="checkbox" id="quoteMakeCover" name="quoteMakeCover"> Make Cover Quote?
-            <% } %>
-          </label>
-        </div>
-
         <div class="row">
           <div class="col-xs-6">
-            <button type="submit" class="btn btn-success">Submit</button>
-            <a href="/quotes/<%= quote._id %>" class="btn btn-warning cancel-add">Cancel</a>
+            <button type="submit" class="btn btn-success">Save</button>
+            <a href="/quotes/<%= quote._id %>" class="btn btn-warning">Cancel</a>
           </div>
 
           <div class="col-xs-6">
-            <a href="/quotes/delete/<%= quote._id %>" class="btn btn-danger">Delete Quote</a>
+            <a href="/quotes/delete/<%= quote._id %>" class="btn btn-danger delete-quote">Delete Quote</a>
           </div>
         </div>
       </form>
