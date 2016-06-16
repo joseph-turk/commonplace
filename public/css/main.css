@@ -19,7 +19,8 @@ footer {
 
 .add-quote,
 .cancel-add,
-.edit-quote {
+.edit-quote,
+.delete-quote {
   float: right;
 }
 
