@@ -15,11 +15,30 @@
         </div>
 
         <div class="panel-body">
-          <blockquote>
-            <%= quote.body %>
-          </blockquote>
+          <div class="col-md-6">
+            <blockquote>
+              <%= quote.body %>
+            </blockquote>
 
-          <cite>—<%= quote.author %></cite>
+            <cite>—<%= quote.author %></cite>
+          </div>
+
+          <div class="col-md-6">
+            <% if (quote.source || quote.sourceauthor) { %>
+              <ul>
+                <% if (quote.source) { %>
+                  <li>
+                    Source: <%= quote.source %>
+                  </li>
+                <% } %>
+                <% if (quote.sourceauthor) { %>
+                  <li>
+                    Source Author: <%= quote.sourceauthor %>
+                  </li>
+                <% } %>
+              </ul>
+            <% } %>
+          </div>
         </div>
       </div>
 
