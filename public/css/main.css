@@ -23,12 +23,25 @@ footer li {
   padding-right: 1em;
 }
 
+p, .jumbotron p {
+  font-size: 1.2em;
+}
+
 footer p {
   text-align: center;
 }
 
 img {
   max-width: 100%;
+}
+
+.btn-success {
+  background-color: #B78433;
+  border-color: #6A4408;
+}
+
+.main-content {
+  margin-bottom: 2em;
 }
 
 .navbar {
@@ -42,10 +55,6 @@ img {
   float: right;
 }
 
-.jumbotron p {
-  font-size: 1em;
-}
-
 .jumbotron .row {
   margin-top: 3em;
 }
@@ -55,6 +64,7 @@ img {
   padding-top: 5em;
   background-image: url('/img/blurry.jpg');
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .what {
@@ -93,6 +103,15 @@ img {
   padding-bottom: 4em;
 }
 
+.landing-row svg {
+  display: block;
+  margin: auto;
+}
+
+.svg-container {
+  height: 105px;
+}
+
 .landing-section {
   display: flex;
   align-items: center;
@@ -104,5 +123,9 @@ img {
 
 .quote-author {
   display: block;
+  margin-bottom: 1em;
+}
+
+.quote-meta {
   margin-bottom: 1em;
 }

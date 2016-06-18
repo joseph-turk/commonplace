@@ -18,7 +18,8 @@
       <div class="hero">
         <div class="container">
           <div class="jumbotron">
-            <h1 class="book-title"><%= book.settings.title %></h1>
+            <h1 class="text-center"><%= book.settings.title %></h1>
+            <h2 class="text-center"><small>a commonplace book by <%= user.displayName %></small></h2>
 
             <div class="row">
               <div class="col-xs-6">
@@ -51,7 +52,6 @@
 
                 <a href="/quotes/<%= book.quotes[i]._id %>" class="btn btn-primary">View</a>
                 <a href="/edit/<%= book.quotes[i]._id %>" class="btn btn-info">Edit</a>
-                <a href="/quotes/delete/<%= book.quotes[i]._id %>" class="btn btn-danger delete-quote">Delete</a>
               </div>
             </div>
           </div>
@@ -74,7 +74,7 @@
 
               <div class="col-sm-9">
                 <p>
-                  Currently, you can log in to Commonplace through your Google account. Support for more account types, including creating a standalone Commonplace account, may be added in the future.
+                  You can log in to Commonplace through your Google account. Support for more account types, including creating a standalone Commonplace account, may be added in the future.
                 </p>
               </div>
             </div>
@@ -82,33 +82,51 @@
         </div>
       </div>
 
-      <div class="row landing-row what">
-        <div class="container landing-section">
+      <div class="row landing-row">
+        <div class="container ">
           <div class="col-sm-6">
+            <div class="svg-container">
+              <svg id="book-svg" data-name="book svg" xmlns="http://www.w3.org/2000/svg" width="87.23" height="101.57" viewBox="0 0 87.23 101.57">
+                <title>book</title>
+                <g>
+                  <polygon points="33.79 92.66 31.2 94.58 36.4 94.58 33.79 92.66" fill="#337AB7"/>
+                  <path d="M277.12,666H235.25v3.91h38A3.91,3.91,0,0,0,277.12,666Z" transform="translate(-189.89 -582.34)" fill="#337AB7"/>
+                  <path d="M235.25,676.92h38a3.91,3.91,0,0,0,3.91-3.91H235.25v3.91Z" transform="translate(-189.89 -582.34)" fill="#337AB7"/>
+                  <path d="M235.25,680.88a1.33,1.33,0,0,1-2.13,1.08l-2.66-2H216.94l-3.26,2.42a1.34,1.34,0,0,1-2.13-1.07V680h-7.33a1.54,1.54,0,0,1,0-3.08h7.33V673h-7.33a1.54,1.54,0,0,1,0-3.08h7.33V666h-9.87a9.15,9.15,0,0,0-9.23,8.33,9,9,0,0,0,8.92,9.55h71.85a3.91,3.91,0,0,0,3.91-3.91H235.25v0.88Z" transform="translate(-189.89 -582.34)" fill="#337AB7"/>
+                  <path d="M267.24,582.34h-63.5a13.89,13.89,0,0,0-13.85,13.85V671.4A12,12,0,0,1,201.36,663h65.88a9.88,9.88,0,0,0,9.88-9.88V592.22A9.88,9.88,0,0,0,267.24,582.34Zm-63.68,29.38v-3.89a1.34,1.34,0,0,1,2.67,0v3.89A1.34,1.34,0,1,1,203.56,611.73ZM210,620.4a1.33,1.33,0,0,1-1.75.71,7.64,7.64,0,0,1-3.52-3,1.34,1.34,0,0,1,2.27-1.41,5,5,0,0,0,2.3,2A1.34,1.34,0,0,1,210,620.4Zm0.44-18.3a5,5,0,0,0-2.69,1.36,1.34,1.34,0,0,1-1.87-1.91,7.61,7.61,0,0,1,4.14-2.09A1.34,1.34,0,1,1,210.42,602.1Zm8,19.61h-3.89a1.34,1.34,0,0,1,0-2.67h3.89A1.34,1.34,0,0,1,218.42,621.71ZM219.94,602H216a1.34,1.34,0,0,1,0-2.67h3.89A1.34,1.34,0,1,1,219.94,602Zm8.22,19.67h-3.89a1.34,1.34,0,0,1,0-2.67h3.89A1.34,1.34,0,0,1,228.15,621.71ZM229.67,602h-3.89a1.34,1.34,0,0,1,0-2.67h3.89A1.34,1.34,0,1,1,229.67,602Zm8.22,19.67H234a1.34,1.34,0,0,1,0-2.67h3.89A1.34,1.34,0,0,1,237.89,621.71ZM239.4,602h-3.89a1.34,1.34,0,0,1,0-2.67h3.89A1.34,1.34,0,1,1,239.4,602Zm8.22,19.67h-3.89a1.34,1.34,0,0,1,0-2.67h3.89A1.34,1.34,0,0,1,247.62,621.71ZM249.14,602h-3.89a1.34,1.34,0,0,1,0-2.67h3.89A1.34,1.34,0,1,1,249.14,602Zm8.32,19.67h-4a1.34,1.34,0,0,1,0-2.67h3.89a1.37,1.37,0,0,1,1.37,1.32A1.3,1.3,0,0,1,257.45,621.71Zm2.7-20.51a1.33,1.33,0,0,1-1.61,1,5,5,0,0,0-1.19-.14H255a1.34,1.34,0,1,1,0-2.67h2.38a7.68,7.68,0,0,1,1.82.22A1.34,1.34,0,0,1,260.15,601.2Zm3.36,17.4a1.34,1.34,0,1,1-2.15-1.59,5,5,0,0,0,1-2.86,1.38,1.38,0,0,1,1.36-1.31A1.34,1.34,0,0,1,265,614.2,7.61,7.61,0,0,1,263.51,618.6Zm1.5-10.26a1.34,1.34,0,0,1-2.67,0V607a5,5,0,0,0-.41-2,1.34,1.34,0,1,1,2.45-1.06,7.6,7.6,0,0,1,.63,3v1.31Z" transform="translate(-189.89 -582.34)" fill="#337AB7"/>
+                  <path d="M222.87,672.27a1.33,1.33,0,0,1,1.59,0l8.11,6v-12.5H214.22v13Z" transform="translate(-189.89 -582.34)" fill="#B78433"/>
+                </g>
+              </svg>
+            </div>
+
             <h2>What is a commonplace book?</h2>
 
-            <img src="/img/book-on-table.jpg" class="center-block">
+            <p>
+              Commonplace books (or commonplaces) are a way to compile knowledge, usually by writing information into books. Such books are essentially scrapbooks filled with items of every kind: recipes, quotes, letters, poems, tables of weights and measures, proverbs, prayers, legal formulas. Commonplaces are used by readers, writers, students, and scholars as an aid for remembering useful concepts or facts they have learned. Each commonplace book is unique to its creator's particular interests. They became significant in Early Modern Europe.
+            </p>
           </div>
 
           <div class="col-sm-6">
-            <p>
-              Actually keffiyeh ethical tote bag post-ironic. Cliche polaroid brooklyn four dollar toast. Hashtag iPhone lo-fi mustache, master cleanse photo booth taxidermy salvia letterpress migas post-ironic fingerstache. 3 wolf moon craft beer seitan, VHS fingerstache roof party health goth offal small batch irony church-key food truck affogato DIY.
-            </p>
-          </div>
-        </div>
-      </div>
+            <div class="svg-container">
+              <svg id="typewriter-svg" data-name="typewriter svg" xmlns="http://www.w3.org/2000/svg" width="127.71" height="96.62" viewBox="0 0 127.71 96.62">
+                <title>typewriter</title>
+                <g>
+                  <path d="M1000.47,1410.3l-14.9-42.76a1.34,1.34,0,0,0-1.26-.9H889.73a1.34,1.34,0,0,0-1.26.9l-14.9,42.76a7.11,7.11,0,0,0,6.71,9.45H993.75A7.11,7.11,0,0,0,1000.47,1410.3Zm-34.85-19.24a2.59,2.59,0,1,1-2.59,2.59A2.6,2.6,0,0,1,965.62,1391.06Zm-9.53-12.2a2.59,2.59,0,1,1-2.59,2.59A2.6,2.6,0,0,1,956.09,1378.85Zm-9.54,12.2a2.59,2.59,0,1,1-2.59,2.59A2.6,2.6,0,0,1,946.55,1391.06Zm-9.53-12.2a2.59,2.59,0,1,1-2.59,2.59A2.6,2.6,0,0,1,937,1378.85Zm-9.53,12.2a2.59,2.59,0,1,1-2.59,2.59A2.6,2.6,0,0,1,927.48,1391.06Zm-9.54-12.2a2.59,2.59,0,1,1-2.59,2.59A2.6,2.6,0,0,1,917.95,1378.85Zm-9.53,12.2a2.59,2.59,0,1,1-2.59,2.59A2.6,2.6,0,0,1,908.41,1391.06Zm72.93,18.24H892.69a1.34,1.34,0,0,1,0-2.67h88.66A1.34,1.34,0,1,1,981.34,1409.29Z" transform="translate(-873.16 -1323.13)" fill="#B78433"/>
+                  <rect x="25.41" y="29.68" width="76.9" height="6.9" rx="1.34" ry="1.34" fill="#B78433"/>
+                  <path d="M892.45,1348.37a3.66,3.66,0,0,0-3.65,3.65v8.47a3.65,3.65,0,0,0,7.3,0V1352A3.66,3.66,0,0,0,892.45,1348.37Z" transform="translate(-873.16 -1323.13)" fill="#B78433"/>
+                  <path d="M981.58,1348.37a3.66,3.66,0,0,0-3.65,3.65v8.47a3.65,3.65,0,0,0,7.3,0V1352A3.66,3.66,0,0,0,981.58,1348.37Z" transform="translate(-873.16 -1323.13)" fill="#B78433"/>
+                  <path d="M974.13,1361.86H899.9a1.34,1.34,0,0,0,0,2.67h74.23A1.34,1.34,0,1,0,974.13,1361.86Z" transform="translate(-873.16 -1323.13)" fill="#337AB7"/>
+                  <path d="M989.29,1353.92a1.34,1.34,0,0,0-1.34,1.34v2a1.34,1.34,0,0,0,1.34,1.34A2.34,2.34,0,0,0,989.29,1353.92Z" transform="translate(-873.16 -1323.13)" fill="#B78433"/>
+                  <path d="M884.66,1353.92a2.34,2.34,0,0,0,0,4.69,1.34,1.34,0,0,0,1.34-1.34v-2A1.34,1.34,0,0,0,884.66,1353.92Z" transform="translate(-873.16 -1323.13)" fill="#B78433"/>
+                  <path d="M974.13,1323.13H899.9a1.34,1.34,0,0,0-1.34,1.34v24.75a1.34,1.34,0,0,0,1.34,1.34h74.23a1.34,1.34,0,0,0,1.34-1.34v-24.75A1.34,1.34,0,0,0,974.13,1323.13Zm-26.32,13.6H926.22a1.34,1.34,0,1,1,0-2.67h21.58A1.34,1.34,0,0,1,947.81,1336.73Z" transform="translate(-873.16 -1323.13)" fill="#337AB7"/>
+                </g>
+              </svg>
+            </div>
 
-      <div class="row landing-row why">
-        <div class="container landing-section">
-          <div class="col-sm-6 col-sm-push-6">
             <h2>Why keep a commonplace book?</h2>
 
-            <img src="/img/book-glasses.jpg" class="center-block">
-          </div>
-
-          <div class="col-sm-6 col-sm-pull-6">
             <p>
-              Chillwave irony pork belly, brunch roof party ramps cold-pressed vegan narwhal chambray post-ironic plaid intelligentsia. Skateboard fanny pack mixtape asymmetrical seitan. Gluten-free four dollar toast umami, four loko chartreuse knausgaard trust fund.
+              We should hunt out the helpful pieces of teaching and the spirited and noble-minded sayings which are capable of immediate practical application–not far far-fetched or archaic expressions or extravagant metaphors and figures of speech–and learn them so well that words become works.
             </p>
           </div>
         </div>

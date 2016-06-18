@@ -85,7 +85,7 @@ var quoteController = function() {
         });
 
         book.save();
-        res.redirect('/quotes');
+        res.redirect('/');
       } else {
         res.send('Not logged in');
       }
@@ -121,7 +121,7 @@ var quoteController = function() {
         book.quotes.pull(id);
 
         book.save();
-        res.redirect('/quotes');
+        res.redirect('/');
       } else {
         res.send('Not logged in');
       }
