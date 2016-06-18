@@ -2,7 +2,7 @@
 <% include partials/header %>
 
   <div class="main-content">
-    <div class="container">
+    <%# <div class="container">%>
 
       <!-- Error and Info Messages -->
       <% if (message) { %>
@@ -15,42 +15,103 @@
 
       <!-- If Logged In -->
       <% if (book) { %>
-      <div class="jumbotron">
-        <h1 class="book-title"><%= book.settings.title %></h1>
+      <div class="hero">
+        <div class="container">
+          <div class="jumbotron">
+            <h1 class="book-title"><%= book.settings.title %></h1>
+
+            <div class="row">
+              <div class="col-xs-6">
+                <a class="btn btn-primary view-quotes" href="/quotes">View Quotes</a>
+              </div>
+
+              <div class="col-xs-6">
+                <a class="btn btn-success add-quote" href="/quotes/new">Add Quote</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="row">
-        <div class="col-xs-6">
-          <a class="btn btn-primary view-quotes" href="/quotes">View Quotes</a>
+      <% for (var i = 0; i < book.quotes.length; i++) { %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="quote-title"><%= book.quotes[i].title %></h3>
         </div>
 
-        <div class="col-xs-6">
-          <a class="btn btn-success add-quote" href="/quotes/new">Add Quote</a>
+        <div class="panel-body">
+          <blockquote class="quote-body">
+            <%= book.quotes[i].body %>
+          </blockquote>
+
+          <cite class="quote-author">—<%= book.quotes[i].author %></cite>
+
+          <a href="/quotes/<%= book.quotes[i]._id %>" class="btn btn-primary">View</a>
+          <a href="/edit/<%= book.quotes[i]._id %>" class="btn btn-info">Edit</a>
+          <a href="/quotes/delete/<%= book.quotes[i]._id %>" class="btn btn-danger delete-quote">Delete</a>
         </div>
       </div>
+      <% } %>
       <!-- End If Logged In -->
 
       <!-- If Not Logged In -->
       <% } else { %>
-      <div class="jumbotron">
-        <h1 class="book-title">Welcome to Commonplace</h1>
+      <div class="hero">
+        <div class="container">
+          <div class="jumbotron">
+            <h1 class="text-center">Welcome to Commonplace</h1>
+            <h2 class="text-center"><small>a commonplace book in your browser</small></h2>
+
+            <div class="row">
+              <div class="col-sm-3">
+                <a class="btn btn-primary" href="/auth/google">Log In or Sign Up</a>
+              </div>
+
+              <div class="col-sm-9">
+                <p>
+                  Currently, you can log in to Commonplace through your Google account. Support for more account types, including creating a standalone Commonplace account, may be added in the future.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="row">
-        <div class="col-sm-3">
-          <a class="btn btn-primary" href="/auth/google">Log In or Sign Up</a>
-        </div>
+      <div class="row landing-row what">
+        <div class="container landing-section">
+          <div class="col-sm-6">
+            <h2>What is a commonplace book?</h2>
 
-        <div class="col-sm-9">
-          <p>
-            Currently, you can create a Commonplace through your Google account. Support for more account types, including creating a standalone Commonplace account, may be added in the future.
-          </p>
+            <img src="/img/book-on-table.jpg" class="center-block">
+          </div>
+
+          <div class="col-sm-6">
+            <p>
+              Actually keffiyeh ethical tote bag post-ironic. Cliche polaroid brooklyn four dollar toast. Hashtag iPhone lo-fi mustache, master cleanse photo booth taxidermy salvia letterpress migas post-ironic fingerstache. 3 wolf moon craft beer seitan, VHS fingerstache roof party health goth offal small batch irony church-key food truck affogato DIY.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row landing-row why">
+        <div class="container landing-section">
+          <div class="col-sm-6 col-sm-push-6">
+            <h2>Why keep a commonplace book?</h2>
+
+            <img src="/img/book-glasses.jpg" class="center-block">
+          </div>
+
+          <div class="col-sm-6 col-sm-pull-6">
+            <p>
+              Chillwave irony pork belly, brunch roof party ramps cold-pressed vegan narwhal chambray post-ironic plaid intelligentsia. Skateboard fanny pack mixtape asymmetrical seitan. Gluten-free four dollar toast umami, four loko chartreuse knausgaard trust fund.
+            </p>
+          </div>
         </div>
       </div>
       <% } %>
       <!-- End If Not Logged In -->
 
-    </div> <!-- /.container -->
+    <%# </div> <!-- /.container -->%>
   </div> <!-- /.main-content -->
 
 <% include partials/footer %>

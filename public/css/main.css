@@ -5,6 +5,7 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #FDFDFD;
 }
 
 footer {
@@ -14,7 +15,24 @@ footer {
   height: 60px;
   padding: 25px 0;
   background-color: #f5f5f5;
+}
+
+footer li {
+  float: left;
+  list-style: none;
+  padding-right: 1em;
+}
+
+footer p {
   text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+.navbar {
+  margin-bottom: 0;
 }
 
 .add-quote,
@@ -24,12 +42,55 @@ footer {
   float: right;
 }
 
+.jumbotron p {
+  font-size: 1em;
+}
+
+.jumbotron .row {
+  margin-top: 3em;
+}
+
+.hero {
+  min-height: 60vh;
+  padding-top: 5em;
+  background-image: url('/img/blurry.jpg');
+  background-size: cover;
+}
+
+.what {
+  background-color: #F5F5F5;
+  width: 100%;
+}
+
+.why {
+  background-color: #DADADA;
+}
+
+.quote-list {
+  padding-bottom: 5em;
+}
+
+.row {
+  max-width: 100%;
+  margin: 0;
+}
+
 .book-title {
   text-align: center;
 }
 
-.main-content {
-  padding-bottom: 60px;
+.landing-row {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.landing-section {
+  display: flex;
+  align-items: center;
+}
+
+.landing-row h2 {
+  text-align: center;
 }
 
 .quote-author {
