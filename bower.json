@@ -17,7 +17,8 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "masonry": "^4.1.0"
+    "masonry": "^4.1.0",
+    "font-awesome": "^4.6.3"
   },
   "overrides": {
     "bootstrap": {
@@ -30,6 +31,11 @@
     "masonry": {
       "main": [
         "./dist/masonry.pkgd.js"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "./css/font-awesome.css"
       ]
     }
   }
