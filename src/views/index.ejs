@@ -33,25 +33,30 @@
         </div>
       </div>
 
-      <% for (var i = 0; i < book.quotes.length; i++) { %>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="quote-title"><%= book.quotes[i].title %></h3>
+
+        <div class="container quote-grid">
+          <% for (var i = 0; i < book.quotes.length; i++) { %>
+          <div class="quote">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="quote-title"><%= book.quotes[i].title %></h3>
+              </div>
+
+              <div class="panel-body">
+                <blockquote class="quote-body">
+                  <%= book.quotes[i].body %>
+                </blockquote>
+
+                <cite class="quote-author">—<%= book.quotes[i].author %></cite>
+
+                <a href="/quotes/<%= book.quotes[i]._id %>" class="btn btn-primary">View</a>
+                <a href="/edit/<%= book.quotes[i]._id %>" class="btn btn-info">Edit</a>
+                <a href="/quotes/delete/<%= book.quotes[i]._id %>" class="btn btn-danger delete-quote">Delete</a>
+              </div>
+            </div>
+          </div>
+          <% } %>
         </div>
-
-        <div class="panel-body">
-          <blockquote class="quote-body">
-            <%= book.quotes[i].body %>
-          </blockquote>
-
-          <cite class="quote-author">—<%= book.quotes[i].author %></cite>
-
-          <a href="/quotes/<%= book.quotes[i]._id %>" class="btn btn-primary">View</a>
-          <a href="/edit/<%= book.quotes[i]._id %>" class="btn btn-info">Edit</a>
-          <a href="/quotes/delete/<%= book.quotes[i]._id %>" class="btn btn-danger delete-quote">Delete</a>
-        </div>
-      </div>
-      <% } %>
       <!-- End If Logged In -->
 
       <!-- If Not Logged In -->
