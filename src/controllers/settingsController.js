@@ -47,7 +47,7 @@ var settingsController = function() {
             title: "Welcome to Commonplace"
           }
         },
-        quote: null
+        message: null
       });
     }
   };
@@ -73,7 +73,7 @@ var settingsController = function() {
             title: "Welcome to Commonplace"
           }
         },
-        quote: null
+        message: null
       });
     }
   };

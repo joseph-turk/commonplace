@@ -9,7 +9,6 @@ var indexController = function() {
           res.render('index', {
             book: book,
             user: req.user,
-            quote: null,
             message: null
           });
         } else {
@@ -19,12 +18,7 @@ var indexController = function() {
     } else {
       res.render('index', {
         user: null,
-        book: {
-          settings: {
-            title: "Welcome to Commonplace"
-          }
-        },
-        quote: null,
+        book: null,
         message: null
       });
     }

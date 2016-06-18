@@ -22,7 +22,6 @@ var quoteController = function() {
             title: "Welcome to Commonplace"
           }
         },
-        quote: null,
         message: "Please log in or sign up."
       });
     }
@@ -67,7 +66,6 @@ var quoteController = function() {
             title: "Welcome to Commonplace"
           }
         },
-        quote: null,
         message: "Please log in or sign up."
       });
     }
