@@ -3,20 +3,22 @@
 
   <div class="main-content">
     <div class="container">
+
+      <!-- Error and Info Messages -->
       <% if (message) { %>
         <div class="alert alert-warning alert-dismissible" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <%= message %>
         </div>
       <% } %>
+      <!-- End Error and Info Messages -->
 
+      <!-- If Logged In -->
       <% if (book) { %>
       <div class="jumbotron">
         <h1 class="book-title"><%= book.settings.title %></h1>
       </div>
-      <% } %>
 
-      <% if (user) { %>
       <div class="row">
         <div class="col-xs-6">
           <a class="btn btn-primary view-quotes" href="/quotes">View Quotes</a>
@@ -26,15 +28,30 @@
           <a class="btn btn-success add-quote" href="/quotes/new">Add Quote</a>
         </div>
       </div>
+      <!-- End If Logged In -->
+
+      <!-- If Not Logged In -->
       <% } else { %>
+      <div class="jumbotron">
+        <h1 class="book-title">Welcome to Commonplace</h1>
+      </div>
+
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-sm-3">
           <a class="btn btn-primary" href="/auth/google">Log In or Sign Up</a>
+        </div>
+
+        <div class="col-sm-9">
+          <p>
+            Currently, you can create a Commonplace through your Google account. Support for more account types, including creating a standalone Commonplace account, may be added in the future.
+          </p>
         </div>
       </div>
       <% } %>
-    </div>
-  </div>
+      <!-- End If Not Logged In -->
+
+    </div> <!-- /.container -->
+  </div> <!-- /.main-content -->
 
 <% include partials/footer %>
 <% include partials/scripts %>
