@@ -5,9 +5,16 @@ var passport = require('passport');
 var mongoose = require('mongoose');
 var session = require('express-session');
 
-var app = express();
-var db = mongoose.connect('mongodb://localhost/commonplaceDB');
 
+var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
+var app = express();
+
+if (env === 'development') {
+  var db = mongoose.connect('mongodb://localhost/commonplaceDB');
+} else {
+  var db = mongoose.connect('mongodb://jrturk:commonplace@ds019882.mlab.com:19882/commonplace');
+}
 
 // Set port to serve on localhost
 var port = process.env.PORT || 3000;
