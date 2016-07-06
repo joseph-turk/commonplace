@@ -4,7 +4,9 @@
   "description": "A commonplace book in your browser.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "bower install"
   },
   "engines": {
     "node": "4.4.x",
