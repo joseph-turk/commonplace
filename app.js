@@ -50,6 +50,20 @@ var authRouter = require('./src/routes/authRoutes.js')();
 var aboutRouter = require('./src/routes/aboutRoutes.js')();
 //var userRouter = require('./src/routes/userRoutes.js')();
 
+// Authentication-Checking Middleware
+function authChecker(req, res, next) {
+  if (req.user) {
+      next();
+  } else {
+     res.redirect("/");
+  }
+}
+
+// Routes to Limit to Authenticated Users
+app.use('/quotes', authChecker);
+app.use('/edit', authChecker);
+app.use('/settings', authChecker);
+
 // Page Routes
 app.use('/', indexRouter);
 app.use('/quotes', quoteRouter);
