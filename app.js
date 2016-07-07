@@ -7,14 +7,11 @@ var session = require('express-session');
 
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+var mongoURI = process.env.MONGO_URI || 'mongodb://localhost/commonplaceDB';
 
 var app = express();
 
-if (env === 'development') {
-  var db = mongoose.connect('mongodb://localhost/commonplaceDB');
-} else {
-  var db = mongoose.connect('mongodb://jrturk:commonplace@ds019882.mlab.com:19882/commonplace');
-}
+var db = mongoose.connect(mongoURI);
 
 // Set port to serve on localhost
 var port = process.env.PORT || 3000;
