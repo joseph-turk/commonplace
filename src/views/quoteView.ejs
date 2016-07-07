@@ -15,7 +15,7 @@
         </div>
 
         <div class="panel-body">
-          <div class="col-md-6">
+          <div class="col-md-6 quote-main">
             <blockquote>
               <%= quote.body %>
             </blockquote>
@@ -23,17 +23,17 @@
             <cite>—<%= quote.author %></cite>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-md-6 quote-extra">
             <% if (quote.source || quote.sourceauthor) { %>
               <ul>
                 <% if (quote.source) { %>
                   <li>
-                    Source: <%= quote.source %>
+                    <strong>Source:</strong> <%= quote.source %>
                   </li>
                 <% } %>
                 <% if (quote.sourceauthor) { %>
                   <li>
-                    Source Author: <%= quote.sourceauthor %>
+                    <strong>Source Author:</strong> <%= quote.sourceauthor %>
                   </li>
                 <% } %>
               </ul>
@@ -44,15 +44,15 @@
 
       <div class="row well quote-meta">
         <div class="col-md-6">
-          Created: <%= quote.createdAt %>
+          <strong>Created:</strong> <%= quote.createdAt %>
         </div>
 
         <div class="col-md-6">
-          Modified: <%= quote.updatedAt %>
+          <strong>Modified:</strong> <%= quote.updatedAt %>
         </div>
       </div>
 
-      <div class="row">
+      <div class="row quote-actions">
         <div class="col-xs-6">
           <a href="/quotes" class="btn btn-default">Back to Quotes</a>
         </div>

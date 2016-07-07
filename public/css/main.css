@@ -74,7 +74,7 @@ img {
 }
 
 .quote-list {
-  padding: 5em 0;
+  padding: 0 0 5em;
 }
 
 .quote-grid {
@@ -127,6 +127,10 @@ img {
   margin-bottom: 1em;
 }
 
+.quote-actions {
+  margin: 1em auto;
+}
+
 @media screen and (max-width: 768px) {
   .login-button {
     display: block;
@@ -149,5 +153,13 @@ img {
 
   .footer-copyright {
     margin-top: 1em;
+  }
+
+  .quote-extra {
+    margin-top: 1em;
+  }
+
+  .quote-extra ul {
+    padding-left: 20px;
   }
 }
