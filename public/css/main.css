@@ -35,10 +35,13 @@ img {
   max-width: 100%;
 }
 
-/*.btn-success {
-  background-color: #B78433;
-  border-color: #6A4408;
-}*/
+@media screen and (max-width: 768px) {
+  .login-button {
+    display: block;
+    width: 80%;
+    margin: 0 auto 1em;
+  }
+}
 
 .main-content {
   margin-bottom: 2em;
