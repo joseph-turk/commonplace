@@ -7,24 +7,12 @@ var quoteController = function() {
 
   // Get All Quotes for List View
   var getIndex = function(req, res) {
-    if (req.user) {
-      Book.findOne({'creator': req.user.email}, function(err, book) {
-        res.render('quoteListView', {
-          quotes: book.quotes,
-          user: req.user
-        });
+    Book.findOne({'creator': req.user.email}, function(err, book) {
+      res.render('quoteListView', {
+        quotes: book.quotes,
+        user: req.user
       });
-    } else {
-      res.render('index', {
-        user: null,
-        book: {
-          settings: {
-            title: "Welcome to Commonplace"
-          }
-        },
-        message: "Please log in or sign up."
-      });
-    }
+    });
   };
 
   // Get Single Quote by ID
@@ -54,21 +42,9 @@ var quoteController = function() {
 
   // Show Quote Add Form
   var getQuoteAdd = function(req, res) {
-    if (req.user) {
-      res.render('quoteAddView', {
-        user: req.user
-      });
-    } else {
-      res.render('index', {
-        user: null,
-        book: {
-          settings: {
-            title: "Welcome to Commonplace"
-          }
-        },
-        message: "Please log in or sign up."
-      });
-    }
+    res.render('quoteAddView', {
+      user: req.user
+    });
   };
 
   // Send Quote Add Form Data to DB

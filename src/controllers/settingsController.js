@@ -42,12 +42,8 @@ var settingsController = function() {
     } else {
       res.render('index', {
         user: null,
-        book: {
-          settings: {
-            title: "Welcome to Commonplace"
-          }
-        },
-        message: null
+        book: null,
+        message: 'Please log in or sign up.'
       });
     }
   };
@@ -68,12 +64,8 @@ var settingsController = function() {
     } else {
       res.render('index', {
         user: null,
-        book: {
-          settings: {
-            title: "Welcome to Commonplace"
-          }
-        },
-        message: null
+        book: null,
+        message: 'Please log in or sign up.'
       });
     }
   };

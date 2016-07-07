@@ -55,14 +55,17 @@ function authChecker(req, res, next) {
   if (req.user) {
       next();
   } else {
-     res.redirect("/");
+     res.render('index', {
+       user: null,
+       book: null,
+       message: 'Please log in or sign up.'
+     });
   }
 }
 
 // Routes to Limit to Authenticated Users
 app.use('/quotes', authChecker);
 app.use('/edit', authChecker);
-app.use('/settings', authChecker);
 
 // Page Routes
 app.use('/', indexRouter);

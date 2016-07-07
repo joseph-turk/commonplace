@@ -35,7 +35,9 @@ img {
   max-width: 100%;
 }
 
-
+.alert {
+  margin: 1em;
+}
 
 .main-content {
   margin-bottom: 2em;
