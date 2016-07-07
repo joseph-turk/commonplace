@@ -131,6 +131,10 @@ img {
   margin: 1em auto;
 }
 
+.quote-id-field {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .login-button {
     display: block;
