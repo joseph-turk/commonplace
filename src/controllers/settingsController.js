@@ -80,25 +80,15 @@ var settingsController = function() {
 
   // Send Settings Edit Form Data to DB
   var postSettingsUpdate = function(req, res) {
-    var updateTitle = function(db, callback) {
-        db.collection('books').updateOne(
-          {
-              'creator': req.user.email
-          },
-          {
-              $set: { 'settings.title': req.body.bookTitle }
-          }, function(err, results) {
-              callback();
-          }
-        );
-    };
-
-    mongodb.connect(url, function(err, db) {
-       updateTitle(db, function() {
-           res.redirect('/');
-           db.close();
-       });
-    });
+    Book.findOneAndUpdate(
+      {'creator': req.user.email},
+      {
+        'settings.title': req.body.bookTitle
+      },
+      function(err, results) {
+        res.redirect('/');
+      }
+    );
   };
 
   return {
