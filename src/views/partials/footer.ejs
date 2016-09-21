@@ -9,9 +9,12 @@
           <li>
             <a href="/about">About</a>
           </li>
-          <li>
-            <a href="/auth/google">Log In</a>
-          </li>
+          <% if (user) { %>
+            <li><a href="/settings">Settings</a></li>
+            <li><a href="/logout">Log Out</a></li>
+          <% } else { %>
+            <li><a href="/auth/google">Log In</a></li>
+          <% } %>
         </ul>
       </div>
 
